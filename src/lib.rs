@@ -38,7 +38,7 @@ use wagon::{Cargo, is_overloaded, total_weight};
 /// ```
 pub fn describe_load(load: &[Cargo]) -> String {
     let total = total_weight(load);
-    let status = if !is_overloaded(total) {
+    let status = if is_overloaded(total) {
         "overloaded"
     } else {
         "ok"
